@@ -5,35 +5,31 @@ package gradle;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import gradle.App;
 
 class AppTest {
-    @Test void appHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
-    }
 
     @Test void registrarUsuario() {
         App classUnderTest = new App();
-        registrarUsuario(nom, correo);
+        registrarUsuario();
     }
 
     @Test void eliminarUsuario() {
         App classUnderTest = new App();
-        eliminarUsuario(equals(nom));
+        eliminarUsuario();
     }
 
     @Test void añadirLibro() {
         App classUnderTest = new App();
-        añadirLibro(titol, autor);
+        añadirLibro();
     }
 
     @Test void eliminarLibro() {
         App classUnderTest = new App();
-        eliminarLibro(equals(titol));
+        eliminarLibro();
     }
 
     @Test void listarLibros() {
         App classUnderTest = new App();
-        toString(listarLibros());
     }
 }

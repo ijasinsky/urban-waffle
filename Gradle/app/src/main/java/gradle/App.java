@@ -3,6 +3,8 @@
  */
 package gradle;
 
+import java.lang.reflect.Array;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
@@ -10,5 +12,38 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
+    }
+
+    public static void registrarUsuario(){
+        String nom = "Roberto";
+    }
+
+    public static void eliminarUsuario(){
+        String nom = "Robert";
+        nom.equals("Robert");
+        nom.replaceFirst("Robert", null);
+    }
+
+    public static void añadirLibro() {
+        String libro = "cuento";
+    }
+
+    public static void eliminarLibro(){
+        String libro = "cuento";
+        libro.equals(libro);
+        libro.replace("cuento", null);
+    }
+
+    public static void listarLibros(){
+        String libro;
+        Object lista[];
+    }
+
+    public static void marcarComoLeido(){
+        String libro = "cuento";
+    }
+
+    public static void verLibrosLeidos(){
+        String libro;
     }
 }
