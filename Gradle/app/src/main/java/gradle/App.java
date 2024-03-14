@@ -5,6 +5,9 @@ package gradle;
 
 import java.lang.reflect.Array;
 
+import com.google.common.base.Strings;
+import com.google.common.primitives.Booleans;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
@@ -16,6 +19,7 @@ public class App {
 
     public static void registrarUsuario(){
         String nom = "Roberto";
+
     }
 
     public static void eliminarUsuario(){
@@ -25,7 +29,13 @@ public class App {
     }
 
     public static void añadirLibro() {
-        String libro = "cuento";
+        String libro = "Cuento";
+        String libro2 = "Marciano";
+        String autor = "Pizzasso";
+        String[] lista = {"Marica", libro, libro2};
+        if () {
+
+        }
     }
 
     public static void eliminarLibro(){
@@ -36,14 +46,24 @@ public class App {
 
     public static void listarLibros(){
         String libro;
-        Object lista[];
+        String lista[];
     }
 
     public static void marcarComoLeido(){
+        String usuario = "Paco"; 
         String libro = "cuento";
+        boolean leido = false;
+        if (libro != null) {
+            leido = true;
+        }
     }
 
     public static void verLibrosLeidos(){
-        String libro;
+        String libro = "Marciano";
+        String[] lista = {"Marica", libro};
+        boolean leido = false;
+        if (leido == true) {
+
+        }
     }
 }
