@@ -4,6 +4,7 @@
 package gradle;
 
 import java.lang.reflect.Array;
+import java.util.Scanner;
 
 import com.google.common.base.Strings;
 import com.google.common.primitives.Booleans;
@@ -32,10 +33,6 @@ public class App {
         String libro = "Cuento";
         String libro2 = "Marciano";
         String autor = "Pizzasso";
-        String[] lista = {"Marica", libro, libro2};
-        if () {
-
-        }
     }
 
     public static void eliminarLibro(){
@@ -45,25 +42,36 @@ public class App {
     }
 
     public static void listarLibros(){
-        String libro;
-        String lista[];
+
     }
 
-    public static void marcarComoLeido(){
-        String usuario = "Paco"; 
-        String libro = "cuento";
+    public static void marcarComoLeido(String usuario, String libro){
+        Scanner escaner = new Scanner(System.in);
+        usuario = "Paco"; 
+        libro = "cuento";
         boolean leido = false;
-        if (libro != null) {
-            leido = true;
+        System.out.println("Quieres marcar como leido el libro: si/no");
+        String marcar = escaner.nextLine();
+        if(marcar == "si" || marcar == "no"){
+            if (marcar == "si") {
+                leido = true;
+            }else{
+                System.out.println("No se ha hecho nada");
+            }
+        }else{
+            System.out.println("Solo se permite si o no");
         }
+        escaner.close();
     }
 
     public static void verLibrosLeidos(){
         String libro = "Marciano";
         String[] lista = {"Marica", libro};
         boolean leido = false;
-        if (leido == true) {
-
+        for(int i = 0; i < lista.length; i++){
+            if(leido == true){
+                System.out.println(lista);
+            }
         }
     }
 }
