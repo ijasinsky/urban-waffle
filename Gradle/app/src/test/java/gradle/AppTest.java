@@ -31,5 +31,16 @@ class AppTest {
 
     @Test void listarLibros() {
         App classUnderTest = new App();
+        listarLibros();
+    }
+
+    @Test void marcarComoLeido() {
+        App classUnderTest = new App();
+        marcarComoLeido();
+    }
+
+    @Test void verLibrosLeidos() {
+        App classUnderTest = new App();
+        verLibrosLeidos();
     }
 }

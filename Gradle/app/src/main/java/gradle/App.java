@@ -15,7 +15,7 @@ public class App {
     public static Scanner escaner = new Scanner(System.in);
     public static HashMap<String, String> usuarios = new HashMap<String, String>();
     public static HashMap<String, String> listalibros = new HashMap<String, String>();
-    public static boolean leido = false;
+    public static HashMap<String, Boolean> librosleidos = new HashMap<String, Boolean>();
 
     public static void registrarUsuario(){
         System.out.println("Introduce tu nomebre");
@@ -56,29 +56,19 @@ public class App {
         }
     }
 
-    public static void marcarComoLeido(String usuario, String libro){
-        System.out.println("Quieres marcar como leido el libro: si/no");
+    public static void marcarComoLeido(){
+        
+        System.out.println("Nombre del libro ha marcar");
         String marcar = escaner.nextLine();
-        if(marcar == "si" || marcar == "no"){
-            if (marcar == "si") {
-                leido = true;
-            }else{
-                System.out.println("No se ha hecho nada");
-            }
-        }else{
-            System.out.println("Solo se permite si o no");
-        }
-        escaner.close();
+        librosleidos.put(marcar, true);
     }
 
     public static void verLibrosLeidos(){
-        String libro = "Marciano";
-        String[] lista = {"Marica", libro};
-        boolean leido = false;
-        for(int i = 0; i < lista.length; i++){
-            if(leido == true){
-                System.out.println(lista);
+    
+        for(String i : listalibros.values()){
+            if (librosleidos.get(listalibros.get(i)) ) {
+                System.out.println(i);
             }
         }
-    }
+    }       
 }
