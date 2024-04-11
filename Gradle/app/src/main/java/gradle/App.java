@@ -14,14 +14,18 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println("¿Que quieres hacer?");
-        System.out.println("Registra un usuario.");
-        System.out.println("Eliminar un usuario");
-        System.out.println("Añadir libro");
-        System.out.println("Eliminar libro");
-        System.out.println("Listar libros");
-        System.out.println("Marcar Libro");
-        System.out.println("Ver libros leidos");
+        System.out.println("1-Registra un usuario.");
+        System.out.println("2-Eliminar un usuario");
+        System.out.println("3-Añadir libro");
+        System.out.println("4-Eliminar libro");
+        System.out.println("5-Listar libros");
+        System.out.println("6-Marcar Libro");
+        System.out.println("7-Ver libros leidos");
+
         int select = escaner.nextInt();
+        while (select != 1-7) {
+           select = escaner.nextInt(); 
+        }
 
         switch (select) {
             case 1:
