@@ -3,33 +3,66 @@
  */
 package gradle;
 
-import java.lang.reflect.Array;
 import java.util.Scanner;
 import java.util.HashMap;
 
-import com.google.common.base.Strings;
-import com.google.common.primitives.Booleans;
-
 public class App {
-    
     public static Scanner escaner = new Scanner(System.in);
     public static HashMap<String, String> usuarios = new HashMap<String, String>();
     public static HashMap<String, String> listalibros = new HashMap<String, String>();
     public static HashMap<String, Boolean> librosleidos = new HashMap<String, Boolean>();
 
-    public static void registrarUsuario(){
+    public static void main(String[] args) {
+        System.out.println("¿Que quieres hacer?");
+        System.out.println("Registra un usuario.");
+        System.out.println("Eliminar un usuario");
+        System.out.println("Añadir libro");
+        System.out.println("Eliminar libro");
+        System.out.println("Listar libros");
+        System.out.println("Marcar Libro");
+        System.out.println("Ver libros leidos");
+        int select = escaner.nextInt();
+
+        switch (select) {
+            case 1:
+            registrarUsuario();
+                break;
+            case 2:
+            eliminarUsuario();
+                break;
+            case 3:
+            añadirLibro();
+                break;
+            case 4:
+            eliminarLibro();
+                break;
+            case 5:
+            listarLibros();
+                break;
+            case 6:
+            marcarComoLeido();
+                break;
+            case 7:
+            verLibrosLeidos();
+                break;
+            default:
+                break;
+        }
+    }
+
+    public static void registrarUsuario() {
         System.out.println("Introduce tu nomebre");
         String usuario = escaner.nextLine();
         usuarios.put(usuario, usuario);
     }
 
-    public static void eliminarUsuario(){
+    public static void eliminarUsuario() {
         System.out.println("Introduce el nombre del usuario que quieras eliminar: ");
         String elimusuario = escaner.nextLine();
-        
+
         if (elimusuario == usuarios.get(elimusuario)) {
             usuarios.remove(elimusuario, elimusuario);
-        }else{
+        } else {
             System.out.println("No se ha encontrado ningun usuario con ese nombre");
         }
     }
@@ -40,35 +73,33 @@ public class App {
         listalibros.put(añadirLibro, añadirLibro);
     }
 
-    public static void eliminarLibro(){
+    public static void eliminarLibro() {
         System.out.println("Que libro quieres eliminar: ");
         String libroaEliminar = escaner.nextLine();
         if (libroaEliminar == usuarios.get(libroaEliminar)) {
             listalibros.remove(libroaEliminar, libroaEliminar);
-        }else{
+        } else {
             System.out.println("No se ha encontrado ningun usuario con ese nombre");
         }
     }
 
-    public static void listarLibros(){
-        for(String i : listalibros.values()){
+    public static void listarLibros() {
+        for (String i : listalibros.values()) {
             System.out.println(i);
         }
     }
 
-    public static void marcarComoLeido(){
-        
+    public static void marcarComoLeido() {
         System.out.println("Nombre del libro ha marcar");
         String marcar = escaner.nextLine();
         librosleidos.put(marcar, true);
     }
 
-    public static void verLibrosLeidos(){
-    
-        for(String i : listalibros.values()){
-            if (librosleidos.get(listalibros.get(i)) ) {
+    public static void verLibrosLeidos() {
+        for (String i : listalibros.values()) {
+            if (librosleidos.get(listalibros.get(i))) {
                 System.out.println(i);
             }
         }
-    }       
+    }
 }

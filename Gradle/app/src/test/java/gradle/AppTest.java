@@ -9,38 +9,50 @@ import gradle.App;
 
 class AppTest {
 
-    @Test void registrarUsuario() {
+    @Test
+    void registrarUsuario() {
         App classUnderTest = new App();
         registrarUsuario();
     }
 
-    @Test void eliminarUsuario() {
+    @Test
+    void eliminarUsuario() {
         App classUnderTest = new App();
         eliminarUsuario();
     }
 
-    @Test void añadirLibro() {
+    @Test
+    void añadirLibro() {
         App classUnderTest = new App();
         añadirLibro();
     }
 
-    @Test void eliminarLibro() {
+    @Test
+    void eliminarLibro() {
         App classUnderTest = new App();
         eliminarLibro();
     }
 
-    @Test void listarLibros() {
+    @Test
+    void listarLibros() {
         App classUnderTest = new App();
         listarLibros();
     }
 
-    @Test void marcarComoLeido() {
+    @Test
+    void marcarComoLeido() {
         App classUnderTest = new App();
         marcarComoLeido();
     }
 
-    @Test void verLibrosLeidos() {
+    @Test
+    void verLibrosLeidos() {
         App classUnderTest = new App();
         verLibrosLeidos();
+    }
+
+    @Test
+    void testName() {
+        
     }
 }
