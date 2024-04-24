@@ -4,55 +4,41 @@
 package gradle;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-import gradle.App;
+
 
 class AppTest {
-
     @Test
-    void registrarUsuario() {
-        App classUnderTest = new App();
-        registrarUsuario();
+    void testAñadirLibro() {
+        
     }
 
     @Test
-    void eliminarUsuario() {
-        App classUnderTest = new App();
-        eliminarUsuario();
+    void testEliminarLibro() {
+        
     }
 
     @Test
-    void añadirLibro() {
-        App classUnderTest = new App();
-        añadirLibro();
+    void testEliminarUsuario() {
+        
     }
 
     @Test
-    void eliminarLibro() {
-        App classUnderTest = new App();
-        eliminarLibro();
+    void testListarLibros() {
+        
     }
 
     @Test
-    void listarLibros() {
-        App classUnderTest = new App();
-        listarLibros();
+    void testMarcarComoLeido() {
+        
     }
 
     @Test
-    void marcarComoLeido() {
-        App classUnderTest = new App();
-        marcarComoLeido();
+    void testRegistrarUsuario() {
+        
     }
 
     @Test
-    void verLibrosLeidos() {
-        App classUnderTest = new App();
-        verLibrosLeidos();
-    }
-
-    @Test
-    void testName() {
+    void testVerLibrosLeidos() {
         
     }
 }

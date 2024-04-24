@@ -7,23 +7,30 @@ import java.util.Scanner;
 import java.util.HashMap;
 
 public class App {
-    public static Scanner escaner = new Scanner(System.in);
-    public static HashMap<String, String> usuarios = new HashMap<String, String>();
-    public static HashMap<String, String> listalibros = new HashMap<String, String>();
-    public static HashMap<String, Boolean> librosleidos = new HashMap<String, Boolean>();
+    public /*static*/ Scanner escaner = new Scanner(System.in);
+    public /*static*/ HashMap<String, String> listausuarios = new HashMap<String, String>();
+    public /*static*/ HashMap<Integer, String> listalibros = new HashMap<Integer, String>();
+    public /*static*/ HashMap<String, Boolean> librosleidos = new HashMap<String, Boolean>();
 
-    public static void main(String[] args) {
+    String usuario;
+    String correo;
+    String titulo;
+    String autor;
+    int codigolibro;
+
+    /*public static void main(String[] args) {
         System.out.println("¿Que quieres hacer?");
         System.out.println("1-Registra un usuario.");
         System.out.println("2-Eliminar un usuario");
         System.out.println("3-Añadir libro");
         System.out.println("4-Eliminar libro");
         System.out.println("5-Listar libros");
-        System.out.println("6-Marcar Libro");
+        System.out.println("6-Marcar libro");
         System.out.println("7-Ver libros leidos");
+        System.out.println("8-Salir del programa");
 
         int select = escaner.nextInt();
-        while (select != 1-7) {
+        while (select != 1-8) {
            select = escaner.nextInt(); 
         }
 
@@ -52,15 +59,33 @@ public class App {
             default:
                 break;
         }
+    }*/
+
+    public void registrarUsuario(String usuario, String correo) {
+        if(listausuarios.containsKey(correo)){
+            System.out.println("Este correo ya esta registrado");
+        }else{
+        listausuarios.put(correo, usuario);
+        }
     }
 
-    public static void registrarUsuario() {
+    /*public static void registrarUsuario() {
         System.out.println("Introduce tu nomebre");
-        String usuario = escaner.nextLine();
+        usuario = escaner.nextLine();
+        System.out.println("Introduce tu correo electronico");
+        correo = escaner.nextLine();
         usuarios.put(usuario, usuario);
+    }*/
+
+    public void eliminarUsuario(String usuario) {
+        if (listausuarios.containsValue(usuario)) {
+            listausuarios.remove(correo, usuario);
+        } else {
+            System.out.println("No se ha encontrado ningun usuario con ese nombre");
+        }
     }
 
-    public static void eliminarUsuario() {
+    /*public static void eliminarUsuario() {
         System.out.println("Introduce el nombre del usuario que quieras eliminar: ");
         String elimusuario = escaner.nextLine();
 
@@ -69,37 +94,53 @@ public class App {
         } else {
             System.out.println("No se ha encontrado ningun usuario con ese nombre");
         }
+    }*/
+
+    public void añadirLibro(int codigolibro, String titulo, String autor) {
+        if(listalibros.containsKey(codigolibro)){
+            System.out.println("Este libro ya esta registrado");
+        }else{
+        listalibros.put(codigolibro, titulo);
+        }
     }
 
-    public static void añadirLibro() {
+    /*public static void añadirLibro() {
         System.out.println("Escribe el nombre del libro a añadir: ");
         String añadirLibro = escaner.nextLine();
         listalibros.put(añadirLibro, añadirLibro);
+    }*/
+
+    public void eliminarLibro(String titulo) {
+        if (listalibros.containsValue(titulo)) {
+            System.out.println("No existe este libro");
+        } else {
+            listalibros.remove(codigolibro, titulo);
+        }
     }
 
-    public static void eliminarLibro() {
+    /*public static void eliminarLibro() {
         System.out.println("Que libro quieres eliminar: ");
         String libroaEliminar = escaner.nextLine();
-        if (libroaEliminar == usuarios.get(libroaEliminar)) {
+        if (libroaEliminar == listausuarios.get(libroaEliminar)) {
             listalibros.remove(libroaEliminar, libroaEliminar);
         } else {
             System.out.println("No se ha encontrado ningun usuario con ese nombre");
         }
-    }
+    }*/
 
-    public static void listarLibros() {
+    public /*static*/ void listarLibros() {
         for (String i : listalibros.values()) {
             System.out.println(i);
         }
     }
 
-    public static void marcarComoLeido() {
+    public /*static*/ void marcarComoLeido() {
         System.out.println("Nombre del libro ha marcar");
         String marcar = escaner.nextLine();
         librosleidos.put(marcar, true);
     }
 
-    public static void verLibrosLeidos() {
+    public /*static*/ void verLibrosLeidos() {
         for (String i : listalibros.values()) {
             if (librosleidos.get(listalibros.get(i))) {
                 System.out.println(i);
