@@ -134,17 +134,38 @@ public class App {
         }
     }
 
-    public /*static*/ void marcarComoLeido() {
+    public void marcarComoLeido(String usuario, String titulo) {
+        System.out.println("Nombre del usuario:");
+        String eusuario = escaner.nextLine();
+
+        System.out.println("Nombre del libro:");
+        String etitulo = escaner.nextLine();
+
+        String libroleido = eusuario + " : " + etitulo;
+
+        if (librosleidos.containsKey(libroleido))
+        librosleidos.put(libroleido, true);
+    }
+
+    /*public static void marcarComoLeido() {
         System.out.println("Nombre del libro ha marcar");
         String marcar = escaner.nextLine();
         librosleidos.put(marcar, true);
+    }*/
+
+    public void verLibrosLeidos() {
+        for (String i : listalibros.values()) {
+            if (librosleidos.containsValue(true)) {
+                System.out.println(i);
+            }
+        }
     }
 
-    public /*static*/ void verLibrosLeidos() {
+    /*public static void verLibrosLeidos() {
         for (String i : listalibros.values()) {
             if (librosleidos.get(listalibros.get(i))) {
                 System.out.println(i);
             }
         }
-    }
+    }*/
 }
