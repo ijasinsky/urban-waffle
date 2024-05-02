@@ -153,14 +153,16 @@ public class App {
         librosleidos.put(marcar, true);
     }*/
 
-    public void verLibrosLeidos() {
+    public void verLibrosLeidos(String usuario) {
         for (String i : listalibros.values()) {
-            if (librosleidos.containsValue(true)) {
-                System.out.println(i);
-            }
+            if(listausuarios.containsValue(usuario)){
+                if (librosleidos.containsValue(true)) {
+                    System.out.println(i);
+                }
+        }
         }
     }
-
+    
     /*public static void verLibrosLeidos() {
         for (String i : listalibros.values()) {
             if (librosleidos.get(listalibros.get(i))) {
